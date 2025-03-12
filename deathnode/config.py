@@ -13,3 +13,7 @@ TRUSTED_MACS = [ # Put whitelisted MAC addresses in here
     "00:00:00:00:00:00"
     "AA:AA:AA:AA:AA:AA"
 ]
+
+# logging 
+LOG_FILE = "logs/threats.log"
+BLOCKED_LOG = "logs/blocked.log"
