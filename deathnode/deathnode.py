@@ -3,13 +3,16 @@ import threading
 from sniff import packet_handler
 from detect import alert_user
 from countermeasures import block_mac, deauth
+from config import LOG_FILE, BLOCKED_LOG, DEAUTH_LOG
 
 def show_menu():
     print("1. Start Sniffing")
     print("2. View Threat Log")
     print("3. Manual Block")
     print("4. Manual Deauth")
-    print("5. Exit")
+    print("5. View Logs")
+    print("6. Clear Logs")
+    print("7. Exit")
 
 def view_log():
     with open("logs/threats.log", "r") as log:
@@ -32,6 +35,18 @@ def main():
             mac = input("Enter MAC Address to Write in the Death Node: ")
             deauth(mac)
         elif choice == "5":
+            print("Viewing Logs")
+            with open(LOG_FILE, "r") as log:
+                print(log.read())
+            with open(BLOCKED_LOG, "r") as log:
+                print(log.read())
+            with open(DEAUTH_LOG, "r") as log:
+                print(log.read())
+        elif choice == "6":
+            print("Clearing Logs")
+            with open(LOG_FILE, "w") as log:
+                log.write("")
+        elif choice == "7":
             print("Closing the DeathNode")
             break
         else:
