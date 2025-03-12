@@ -1,4 +1,5 @@
 from scapy.all import *
+from scapy.all import Dot11, sniff
 import time 
 
 def packet_handler(pkt):
