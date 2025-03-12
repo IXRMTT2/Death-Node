@@ -1,9 +1,19 @@
 import os
+import sys
+import subprocess 
 import threading
 from sniff import packet_handler
 from detect import alert_user
 from countermeasures import block_mac, deauth
 from config import LOG_FILE, BLOCKED_LOG, DEAUTH_LOG
+
+GITHUB_REPO = "https://github.com/IXRMTT2/Death-Node"
+
+def update_deathnode():
+    print("[+] Updating DeathNode")
+    os.system("git pull")
+    print("[+] DeathNode Updated")
+    sys.exit(0)
 
 def show_menu():
     print("1. Start Sniffing")
