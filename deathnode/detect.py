@@ -1,6 +1,7 @@
 from sklearn.ensemble import IsolationForest
 import numpy as np
 import time
+from countermeasures import block_mac, deauth
 
 def detect_anomalies(packet_count):
     model = IsolationForest(contamination=0.1)

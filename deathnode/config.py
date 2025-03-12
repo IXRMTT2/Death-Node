@@ -17,3 +17,4 @@ TRUSTED_MACS = [ # Put whitelisted MAC addresses in here
 # logging 
 LOG_FILE = "logs/threats.log"
 BLOCKED_LOG = "logs/blocked.log"
+DEAUTH_LOG = "logs/deauth.log"
